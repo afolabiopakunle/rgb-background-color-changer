@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+</head>
+
+<body>
+    <button id="change-color-button">Click To Change Background Color</button>
+
+    <script>
+        //grab elements
+        let btn = document.querySelector("#change-color-button");
+        let body = document.querySelector("body");
+
+        //CALLBACK
+        btn.addEventListener("click", changeBackgroundColor);
+        let randomNum = function () {
+            return Math.round(Math.random() * 255)
+        }
+
+        function changeBackgroundColor() {
+
+            body.style.backgroundColor = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`;
+            console.log(body.style.backgroundColor)
+        }
+    </script>
+</body>
+
+</html>
